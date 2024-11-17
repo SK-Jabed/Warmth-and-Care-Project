@@ -4,7 +4,7 @@ import FooterLogo from "../../assets/Warmth & Care.png";
 const Footer = () => {
     return (
         <div className="absolute w-full">
-            <div className="bg-[#ffffff15] bg-opacity-15 border-2 border-white rounded-2xl lg:w-11/12 w-full mx-auto lg:p-6 p-3 border-solid relative top-48 z-10 ">
+            <div className="bg-[#ffffff15] bg-opacity-15 border-2 border-white rounded-2xl lg:w-11/12 w-full mx-auto lg:p-6 p-3 border-solid relative top-48 z-10">
           
             <div className="bg-cover bg-no-repeat bg-center object-cover border-2 border-[#13131310] bg-white rounded-3xl md:h-[21rem] relative" style={{backgroundImage: "url(https://i.ibb.co.com/fvVDKf7/bg-shadow.png)"}}>
                 <div className="flex flex-col items-center text-center justify-center">

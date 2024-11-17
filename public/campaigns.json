@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "title": "Warm Up Dhaka Campaign",
+    "image": "https://i.ibb.co.com/rGpT3tZ/cloth-donation.jpg",
+    "description": "Donate your winter clothes to help the vulnerable people of Dhaka stay warm this winter.",
+    "status": "Active",
+    "contactInfo": "dhaka.support@winterdonation.com | +880123456789",
+    "division": "Dhaka"
+  },
+  {
+    "id": 2,
+    "title": "Chattogram Blanket Drive",
+    "image": "https://i.ibb.co.com/rGpT3tZ/cloth-donation.jpg",
+    "description": "Join our blanket drive to provide warmth to underprivileged communities in Chattogram.",
+    "status": "Active",
+    "contactInfo": "chattogram.help@winterdonation.com | +880987654321",
+    "division": "Chattogram"
+  },
+  {
+    "id": 3,
+    "title": "Sylhet Winter Relief",
+    "image": "https://i.ibb.co.com/rGpT3tZ/cloth-donation.jpg",
+    "description": "Support the Sylhet region by donating jackets, sweaters, and blankets to those in need.",
+    "status": "Upcoming",
+    "contactInfo": "sylhet.donation@winterdonation.com | +880111223344",
+    "division": "Sylhet"
+  },
+  {
+    "id": 4,
+    "title": "Rajshahi Coat Collection",
+    "image": "https://i.ibb.co.com/rGpT3tZ/cloth-donation.jpg",
+    "description": "Help us collect coats and sweaters to ensure warmth for the rural areas of Rajshahi.",
+    "status": "Active",
+    "contactInfo": "rajshahi.support@winterdonation.com | +880333221100",
+    "division": "Rajshahi"
+  },
+  {
+    "id": 5,
+    "title": "Khulna Warm Hearts Initiative",
+    "image": "https://i.ibb.co.com/rGpT3tZ/cloth-donation.jpg",
+    "description": "Join us in providing winter clothing to the impoverished communities in Khulna.",
+    "status": "Completed",
+    "contactInfo": "khulna.team@winterdonation.com | +880444555666",
+    "division": "Khulna"
+  },
+  {
+    "id": 6,
+    "title": "Barisal Blanket Relief",
+    "image": "https://i.ibb.co.com/rGpT3tZ/cloth-donation.jpg",
+    "description": "Spread warmth by donating blankets for the people of Barisal suffering in harsh winters.",
+    "status": "Active",
+    "contactInfo": "barisal.relief@winterdonation.com | +880777888999",
+    "division": "Barisal"
+  },
+  {
+    "id": 7,
+    "title": "Mymensingh Sweater Distribution",
+    "image": "https://i.ibb.co.com/rGpT3tZ/cloth-donation.jpg",
+    "description": "Distribute sweaters to underprivileged children and elders in Mymensingh.",
+    "status": "Active",
+    "contactInfo": "mymensingh.support@winterdonation.com | +880112233445",
+    "division": "Mymensingh"
+  },
+  {
+    "id": 8,
+    "title": "Rangpur Warm Clothing Drive",
+    "image": "https://i.ibb.co.com/rGpT3tZ/cloth-donation.jpg",
+    "description": "Provide warm clothing for families in Rangpur who are battling extreme cold.",
+    "status": "Upcoming",
+    "contactInfo": "rangpur.relief@winterdonation.com | +880556677889",
+    "division": "Rangpur"
+  },
+  {
+    "id": 9,
+    "title": "Comilla Winter Aid",
+    "image": "https://i.ibb.co.com/rGpT3tZ/cloth-donation.jpg",
+    "description": "Help distribute warm clothes to the vulnerable population in Comilla.",
+    "status": "Active",
+    "contactInfo": "comilla.support@winterdonation.com | +880998877665",
+    "division": "Comilla"
+  },
+  {
+    "id": 10,
+    "title": "Dinajpur Winter Outreach",
+    "image": "https://i.ibb.co.com/rGpT3tZ/cloth-donation.jpg",
+    "description": "Join our outreach program to support the cold-stricken people in Dinajpur.",
+    "status": "Completed",
+    "contactInfo": "dinajpur.relief@winterdonation.com | +880889977664",
+    "division": "Dinajpur"
+  },
+  {
+    "id": 11,
+    "title": "Warm Hands Dhaka Campaign",
+    "image": "https://i.ibb.co.com/rGpT3tZ/cloth-donation.jpg",
+    "description": "Help us collect gloves and scarves to protect the hands of those in Dhaka this winter.",
+    "status": "Active",
+    "contactInfo": "support.dhaka@winterdonation.com | +880123321456",
+    "division": "Dhaka"
+  },
+  {
+    "id": 12,
+    "title": "Chattogram Winter Essentials",
+    "image": "https://i.ibb.co.com/rGpT3tZ/cloth-donation.jpg",
+    "description": "Donate winter essentials such as socks and caps for the underserved communities in Chattogram.",
+    "status": "Active",
+    "contactInfo": "help.chattogram@winterdonation.com | +880987321654",
+    "division": "Chattogram"
+  },
+  {
+    "id": 13,
+    "title": "Sylhet Blanket and Mattress Drive",
+    "image": "https://i.ibb.co.com/rGpT3tZ/cloth-donation.jpg",
+    "description": "Provide blankets and mattresses to help families in Sylhet combat extreme cold nights.",
+    "status": "Upcoming",
+    "contactInfo": "donations.sylhet@winterdonation.com | +880456123789",
+    "division": "Sylhet"
+  },
+  {
+    "id": 14,
+    "title": "Rajshahi Winter Clothing Appeal",
+    "image": "https://i.ibb.co.com/rGpT3tZ/cloth-donation.jpg",
+    "description": "Support our initiative to collect and distribute sweaters for rural areas in Rajshahi.",
+    "status": "Completed",
+    "contactInfo": "appeal.rajshahi@winterdonation.com | +880333123321",
+    "division": "Rajshahi"
+  },
+  {
+    "id": 15,
+    "title": "Khulna Kids Winter Warmth Drive",
+    "image": "https://i.ibb.co.com/rGpT3tZ/cloth-donation.jpg",
+    "description": "Donate winter clothes for children in Khulna to ensure they stay warm and healthy.",
+    "status": "Active",
+    "contactInfo": "kids.khulna@winterdonation.com | +880444567890",
+    "division": "Khulna"
+  },
+  {
+    "id": 16,
+    "title": "Barisal Rural Warmth Initiative",
+    "image": "https://i.ibb.co.com/rGpT3tZ/cloth-donation.jpg",
+    "description": "Join us in distributing warm clothing to rural areas in Barisal.",
+    "status": "Upcoming",
+    "contactInfo": "rural.barisal@winterdonation.com | +880777000111",
+    "division": "Barisal"
+  },
+  {
+    "id": 17,
+    "title": "Mymensingh Women’s Winter Care",
+    "image": "https://i.ibb.co.com/rGpT3tZ/cloth-donation.jpg",
+    "description": "Donate shawls and winter essentials to women in need in Mymensingh.",
+    "status": "Active",
+    "contactInfo": "womensupport.mymensingh@winterdonation.com | +880112300001",
+    "division": "Mymensingh"
+  },
+  {
+    "id": 18,
+    "title": "Rangpur Cold Wave Relief",
+    "image": "https://i.ibb.co.com/rGpT3tZ/cloth-donation.jpg",
+    "description": "Help us tackle the cold wave in Rangpur by donating warm clothing to families.",
+    "status": "Completed",
+    "contactInfo": "coldwave.rangpur@winterdonation.com | +880556001122",
+    "division": "Rangpur"
+  },
+  {
+    "id": 19,
+    "title": "Comilla Youth Winter Drive",
+    "image": "https://i.ibb.co.com/rGpT3tZ/cloth-donation.jpg",
+    "description": "Collaborate with us to distribute sweaters and coats to young individuals in Comilla.",
+    "status": "Active",
+    "contactInfo": "youth.comilla@winterdonation.com | +880998700777",
+    "division": "Comilla"
+  },
+  {
+    "id": 20,
+    "title": "Dinajpur Winter Shelter Support",
+    "image": "https://i.ibb.co.com/rGpT3tZ/cloth-donation.jpg",
+    "description": "Donate bedding and warm clothes to help the elderly in Dinajpur during winter nights.",
+    "status": "Active",
+    "contactInfo": "shelter.dinajpur@winterdonation.com | +880889700661",
+    "division": "Dinajpur"
+  }
+]

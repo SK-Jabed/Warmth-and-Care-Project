@@ -4,6 +4,9 @@ import Home from "../pages/Home/Home";
 import Campaigns from "../pages/Campaigns/Campaigns";
 import Dashboard from "../pages/Dashboard/Dashboard";
 import HowToHelp from "../pages/HowToHelp/HowToHelp";
+import AuthLayout from "../layouts/AuthLayout/AuthLayout";
+import Login from "../pages/Login/Login";
+import Register from "../pages/Register/Register";
 
 
 const router = createBrowserRouter([
@@ -18,6 +21,7 @@ const router = createBrowserRouter([
       {
         path: "/campaigns",
         element: <Campaigns></Campaigns>,
+        loader: () => fetch("/campaigns.json"),
       },
       {
         path: "/howToHelp",
@@ -29,6 +33,24 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/auth",
+    element: <AuthLayout></AuthLayout>,
+    children: [
+      {
+        path: "/auth/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/auth/register",
+        element: <Register></Register>,
+      },
+    ],
+  },
+  {
+    path: "*",
+    element: <h1>Error</h1>,
+  }
 ]);
 
 export default router;
