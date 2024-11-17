@@ -22,7 +22,7 @@ const Navbar = () => {
     );
 
     return (
-      <div className="bg-[#9538E2]">
+      <div className="bg-[#9538E2] z-50 fixed w-full">
         <div className="container w-11/12 mx-auto py-4">
           <div className="mx-auto flex justify-between items-center">
             <div className="dropdown lg:hidden relative ml-2">
