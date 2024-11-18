@@ -9,6 +9,7 @@ import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import CampaignDetails from "../pages/CampaignDetails/CampaignDetails";
+import PrivateRoute from "./PrivateRoute";
 
 
 const router = createBrowserRouter([
@@ -37,14 +38,18 @@ const router = createBrowserRouter([
   },
   {
     path: "/details/:id",
-    element: <CampaignDetails></CampaignDetails>,
-    loader: async({ params }) => {
+    element: (
+      <PrivateRoute>
+        <CampaignDetails></CampaignDetails>
+      </PrivateRoute>
+    ),
+    loader: async ({ params }) => {
       const res = await fetch("/campaigns.json");
       const data = await res.json();
-      const singleData = data.find(campaign => campaign.id == params.id);
+      const singleData = data.find((campaign) => campaign.id == params.id);
       console.log(singleData);
       return singleData;
-    }
+    },
   },
   {
     path: "/auth",
@@ -63,7 +68,7 @@ const router = createBrowserRouter([
   {
     path: "*",
     element: <ErrorPage></ErrorPage>,
-  }
+  },
 ]);
 
 export default router;

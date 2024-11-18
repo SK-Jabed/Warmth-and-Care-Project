@@ -19,6 +19,7 @@ const githubProvider = new GithubAuthProvider();
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     const createNewUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password);
@@ -53,6 +54,13 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             console.log(currentUser);
+            if (currentUser) {
+                setUser(currentUser);
+            }
+            else {
+                setUser(null);
+            }
+            setLoading(false);
         })
         return () => {
             unsubscribe();
@@ -67,6 +75,7 @@ const AuthProvider = ({ children }) => {
         logoutUser,
         user,
         setUser,
+        loading,
         updateUserProfile
     };
 
