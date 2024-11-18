@@ -5,7 +5,8 @@ import { RxGithubLogo } from "react-icons/rx";
 import { authContext } from '../../provider/AuthProvider';
 
 const Register = () => {
-    const { signInWithGoogle, user, setUser } = useContext(authContext);
+    const { createNewUser, signInWithGoogle, signInWithGitHub, user, setUser } =
+      useContext(authContext);
 
     const handleGoogleSignIn = () => {
       signInWithGoogle()
@@ -16,13 +17,35 @@ const Register = () => {
         .catch((error) => console.log("ERROR", error.message));
     };
 
+    const handleGitHubSignIn = () => {
+      signInWithGitHub()
+        .then((result) => {
+          setUser(result.user);
+          navigate("/");
+        })
+        .catch((error) => console.log("ERROR", error.message));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+        const photo = e.target.photo.value;
+        const password = e.target.password.value;
+
+        console.log(name, email, photo, password);
+
+        createNewUser(email, password);
+    }
+
     return (
       <div className="min-h-screen flex justify-center items-center">
         <div className="card bg-base-100 w-full max-w-xl shrink-0 shadow-2xl rounded-none px-[53px] py-[56px]">
           <h2 className="text-2xl font-semibold text-[#403F3F] text-center pb-8 border-b-2">
             Register your account
           </h2>
-          <form className="card-body">
+          <form onSubmit={handleSubmit} className="card-body">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Your Name</span>
@@ -42,24 +65,24 @@ const Register = () => {
             )} */}
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Photo URL</span>
-              </label>
-              <input
-                type="text"
-                name="photo"
-                placeholder="Enter your photo url"
-                className="input input-bordered"
-                required
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
                 <span className="label-text">Email</span>
               </label>
               <input
                 type="email"
                 name="email"
                 placeholder="Enter your email address"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Photo URL</span>
+              </label>
+              <input
+                type="text"
+                name="photo"
+                placeholder="Enter your photo url"
                 className="input input-bordered"
                 required
               />
@@ -99,14 +122,27 @@ const Register = () => {
               Login With
             </h2>
             <div className="flex flex-col gap-2">
-              <button onClick={handleGoogleSignIn} className="btn text-blue-700 text-lg font-medium bg-white border-2 border-blue-700 hover:text-white hover:bg-blue-400 hover:border-none hover:shadow-lg">
+              <button
+                onClick={handleGoogleSignIn}
+                className="btn text-blue-700 text-lg font-medium bg-white border-2 border-blue-700 hover:text-white hover:bg-blue-400 hover:border-none hover:shadow-lg"
+              >
                 <RiGoogleFill />
                 Login with Google
               </button>
-              <button className="btn text-[#403F3F] text-lg font-medium bg-white border-2 border-[#403F3F] hover:text-white hover:bg-[#403F3F] hover:border-none hover:shadow-lg">
+              <button
+                onClick={handleGitHubSignIn}
+                className="btn text-[#403F3F] text-lg font-medium bg-white border-2 border-[#403F3F] hover:text-white hover:bg-[#403F3F] hover:border-none hover:shadow-lg"
+              >
                 <RxGithubLogo />
                 Login with GitHub
               </button>
+              {/* {user && (
+                <div>
+                  <h2>User: {user.displayName}</h2>
+                  <p>Email: {user.email}</p>
+                  <img src={user.photoURL} alt="" />
+                </div>
+              )} */}
             </div>
           </div>
         </div>
