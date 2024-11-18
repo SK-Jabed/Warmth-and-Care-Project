@@ -8,6 +8,7 @@ import AuthLayout from "../layouts/AuthLayout/AuthLayout";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import CampaignDetails from "../pages/CampaignDetails/CampaignDetails";
 
 
 const router = createBrowserRouter([
@@ -33,6 +34,17 @@ const router = createBrowserRouter([
         element: <Dashboard></Dashboard>,
       },
     ],
+  },
+  {
+    path: "/details/:id",
+    element: <CampaignDetails></CampaignDetails>,
+    loader: async({ params }) => {
+      const res = await fetch("/campaigns.json");
+      const data = await res.json();
+      const singleData = data.find(campaign => campaign.id == params.id);
+      console.log(singleData);
+      return singleData;
+    }
   },
   {
     path: "/auth",

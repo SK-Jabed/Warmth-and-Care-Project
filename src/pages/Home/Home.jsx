@@ -8,7 +8,6 @@ import VolunteerSection from '../../components/VolunteerSection/VolunteerSection
 const Home = () => {
     return (
         <div>
-            This is HomePage
             <Banner></Banner>
             <AboutSection></AboutSection>
             <HowItWorks></HowItWorks>

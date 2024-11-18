@@ -6,7 +6,7 @@ import forthImage from "../../assets/Rectangle 28.png"
 
 const Banner = () => {
     return (
-      <div className='container w-11/12 mx-auto'>
+      <div className='container w-full mx-auto'>
         <div className="carousel w-full mx-auto">
           <div id="slide1" className="carousel-item relative w-full">
             <img
