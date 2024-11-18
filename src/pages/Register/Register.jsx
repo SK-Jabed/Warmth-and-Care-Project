@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { RiGoogleFill } from "react-icons/ri";
 import { RxGithubLogo } from "react-icons/rx";
@@ -7,6 +7,8 @@ import { authContext } from '../../provider/AuthProvider';
 const Register = () => {
     const { createNewUser, signInWithGoogle, signInWithGitHub, user, setUser } =
       useContext(authContext);
+
+    const [error, setError] = useState("");
 
     const handleGoogleSignIn = () => {
       signInWithGoogle()
@@ -28,11 +30,30 @@ const Register = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setError("");
 
         const name = e.target.name.value;
         const email = e.target.email.value;
         const photo = e.target.photo.value;
         const password = e.target.password.value;
+        const confirmPassword = e.target.confirmPassword.value;
+
+        if (password.length < 6) {
+          setError("Password must contain at least 6 characters");
+          return;
+        }
+        if (password !== confirmPassword) {
+          setError("Passwords didn't match");
+          return;
+        }
+        if (!/[a-z]/.test(password)) {
+          setError("Password must contain at least one lowercase letter");
+          return;
+        }
+        if (!/[A-Z]/.test(password)) {
+          setError("Password must contain at least one uppercase letter");
+          return;
+        }
 
         console.log(name, email, photo, password);
 
@@ -98,12 +119,20 @@ const Register = () => {
                 className="input input-bordered"
                 required
               />
-              <label className="label">
-                <a href="#" className="label-text-alt link link-hover">
-                  Forgot password?
-                </a>
-              </label>
             </div>
+            <div className="form-control">
+              <label className="label">
+                <span className="label-text">Confirm Password</span>
+              </label>
+              <input
+                type="password"
+                name="confirmPassword"
+                placeholder="Confirm your password"
+                className="input input-bordered"
+                required
+              />
+            </div>
+            {error && <p className='font-semibold text-red-500'>{error}</p>}
             <div className="form-control">
               <button className="btn btn-neutral rounded-md text-white font-semibold text-base">
                 Register

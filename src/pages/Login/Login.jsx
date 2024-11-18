@@ -5,7 +5,36 @@ import { RiGoogleFill } from "react-icons/ri";
 import { RxGithubLogo } from "react-icons/rx";
 
 const Login = () => {
-    const contextValue = useContext(authContext);
+    const { loginUser, signInWithGoogle, signInWithGitHub, user, setUser } = useContext(authContext);
+
+    const handleGoogleSignIn = () => {
+      signInWithGoogle()
+        .then((result) => {
+          setUser(result.user);
+          navigate("/");
+        })
+        .catch((error) => console.log("ERROR", error.message));
+    };
+
+    const handleGitHubSignIn = () => {
+      signInWithGitHub()
+        .then((result) => {
+          setUser(result.user);
+          navigate("/");
+        })
+        .catch((error) => console.log("ERROR", error.message));
+    };
+
+    const handleSubmit = (e) => {
+      e.preventDefault();
+
+      const email = e.target.email.value;
+      const password = e.target.password.value;
+
+      console.log( email, password);
+
+      loginUser(email, password);
+    };
     
 
     return (
@@ -14,7 +43,7 @@ const Login = () => {
           <h2 className="text-2xl font-semibold text-[#403F3F] text-center pb-8 border-b-2">
             Login your account
           </h2>
-          <form className="card-body">
+          <form onSubmit={handleSubmit} className="card-body">
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email address</span>
@@ -67,11 +96,11 @@ const Login = () => {
               Login With
             </h2>
             <div className="flex flex-col gap-2">
-              <button className="btn text-blue-700 text-lg font-medium bg-white border-2 border-blue-700 hover:text-white hover:bg-blue-400 hover:border-none hover:shadow-lg">
+              <button onClick={handleGoogleSignIn} className="btn text-blue-700 text-lg font-medium bg-white border-2 border-blue-700 hover:text-white hover:bg-blue-400 hover:border-none hover:shadow-lg">
                 <RiGoogleFill />
                 Login with Google
               </button>
-              <button className="btn text-[#403F3F] text-lg font-medium bg-white border-2 border-[#403F3F] hover:text-white hover:bg-[#403F3F] hover:border-none hover:shadow-lg">
+              <button onClick={handleGitHubSignIn} className="btn text-[#403F3F] text-lg font-medium bg-white border-2 border-[#403F3F] hover:text-white hover:bg-[#403F3F] hover:border-none hover:shadow-lg">
                 <RxGithubLogo />
                 Login with GitHub
               </button>
