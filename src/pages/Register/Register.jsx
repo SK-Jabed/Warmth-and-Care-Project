@@ -5,8 +5,14 @@ import { RxGithubLogo } from "react-icons/rx";
 import { authContext } from '../../provider/AuthProvider';
 
 const Register = () => {
-    const { createNewUser, signInWithGoogle, signInWithGitHub, user, setUser } =
-      useContext(authContext);
+    const {
+      createNewUser,
+      signInWithGoogle,
+      signInWithGitHub,
+      user,
+      setUser,
+      updateUserProfile
+    } = useContext(authContext);
 
     const [error, setError] = useState("");
 
@@ -57,7 +63,44 @@ const Register = () => {
 
         console.log(name, email, photo, password);
 
-        createNewUser(email, password);
+        createNewUser(email, password)
+          .then((result) => {
+            const user = result.user;
+            setUser(user);
+            updateUserProfile({ displayName: name, photoURL: photo })
+              .then(() => {
+                navigate("/");
+              })
+              .catch((err) => {
+                // console.log(err);
+              });
+          })
+          .catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            // console.log(errorCode, errorMessage);
+          });
+
+        // createNewUser(email, password)
+        //     .then(res => {
+        //         updateUserProfile(name, photo)
+        //     })
+        //   .then((result) => {
+        //     const user = result.user;
+        //     setUser(user);
+        //     updateUserProfile({ displayName: name, photoURL: photo })
+        //       .then(() => {
+        //         navigate("/");
+        //       })
+        //       .catch((err) => {
+        //         // console.log(err);
+        //       });
+        //   })
+        //   .catch((error) => {
+        //     const errorCode = error.code;
+        //     const errorMessage = error.message;
+        //     // console.log(errorCode, errorMessage);
+        //   });
     }
 
     return (

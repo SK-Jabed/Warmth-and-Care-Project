@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { authContext } from '../../provider/AuthProvider';
 import { RiGoogleFill } from "react-icons/ri";
@@ -6,6 +6,8 @@ import { RxGithubLogo } from "react-icons/rx";
 
 const Login = () => {
     const { loginUser, signInWithGoogle, signInWithGitHub, user, setUser } = useContext(authContext);
+
+    const [error, setError] = useState();
 
     const handleGoogleSignIn = () => {
       signInWithGoogle()
@@ -33,7 +35,15 @@ const Login = () => {
 
       console.log( email, password);
 
-      loginUser(email, password);
+      loginUser(email, password)
+        .then((result) => {
+          const user = result.user;
+          setUser(user);
+        //   navigate(location?.state ? location.state : "/");
+        })
+        .catch((err) => {
+          setError(err.message);
+        });
     };
     
 
@@ -73,11 +83,11 @@ const Login = () => {
                 </a>
               </label>
             </div>
-            {/* {error.login && (
+            {error && (
               <label className="label text-base font-semibold text-red-600">
-                {error.login}
+                {error}
               </label>
-            )} */}
+            )}
             <div className="form-control">
               <button className="btn btn-neutral rounded-md text-white font-semibold text-base">
                 Login
