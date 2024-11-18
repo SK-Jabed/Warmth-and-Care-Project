@@ -1,19 +1,25 @@
 import React, { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { authContext } from '../../provider/AuthProvider';
 import { RiGoogleFill } from "react-icons/ri";
 import { RxGithubLogo } from "react-icons/rx";
+import { FaEye } from "react-icons/fa";
+import { FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
     const { loginUser, signInWithGoogle, signInWithGitHub, user, setUser } = useContext(authContext);
 
     const [error, setError] = useState();
+    const [showPassword, setShowPassword] = useState(false);
+
+    const location = useLocation();
+    const navigate = useNavigate();
 
     const handleGoogleSignIn = () => {
       signInWithGoogle()
         .then((result) => {
           setUser(result.user);
-          navigate("/");
+          navigate(location?.state ? location.state : "/");
         })
         .catch((error) => console.log("ERROR", error.message));
     };
@@ -22,7 +28,7 @@ const Login = () => {
       signInWithGitHub()
         .then((result) => {
           setUser(result.user);
-          navigate("/");
+          navigate(location?.state ? location.state : "/");
         })
         .catch((error) => console.log("ERROR", error.message));
     };
@@ -39,7 +45,8 @@ const Login = () => {
         .then((result) => {
           const user = result.user;
           setUser(user);
-        //   navigate(location?.state ? location.state : "/");
+          navigate(location?.state ? location.state : "/");
+        //   navigate(location.state.from);
         })
         .catch((err) => {
           setError(err.message);
@@ -66,17 +73,23 @@ const Login = () => {
                 required
               />
             </div>
-            <div className="form-control">
+            <div className="form-control relative">
               <label className="label">
                 <span className="label-text">Password</span>
               </label>
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 name="password"
                 placeholder="Enter your password"
                 className="input input-bordered"
                 required
               />
+              <Link
+                onClick={() => setShowPassword(!showPassword)}
+                className="btn btn-xs absolute right-3 top-12 rounded-full"
+              >
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
+              </Link>
               <label className="label">
                 <a href="#" className="label-text-alt link link-hover">
                   Forgot password?
@@ -106,11 +119,17 @@ const Login = () => {
               Login With
             </h2>
             <div className="flex flex-col gap-2">
-              <button onClick={handleGoogleSignIn} className="btn text-blue-700 text-lg font-medium bg-white border-2 border-blue-700 hover:text-white hover:bg-blue-400 hover:border-none hover:shadow-lg">
+              <button
+                onClick={handleGoogleSignIn}
+                className="btn text-blue-700 text-lg font-medium bg-white border-2 border-blue-700 hover:text-white hover:bg-blue-400 hover:border-none hover:shadow-lg"
+              >
                 <RiGoogleFill />
                 Login with Google
               </button>
-              <button onClick={handleGitHubSignIn} className="btn text-[#403F3F] text-lg font-medium bg-white border-2 border-[#403F3F] hover:text-white hover:bg-[#403F3F] hover:border-none hover:shadow-lg">
+              <button
+                onClick={handleGitHubSignIn}
+                className="btn text-[#403F3F] text-lg font-medium bg-white border-2 border-[#403F3F] hover:text-white hover:bg-[#403F3F] hover:border-none hover:shadow-lg"
+              >
                 <RxGithubLogo />
                 Login with GitHub
               </button>
