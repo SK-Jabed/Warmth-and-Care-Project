@@ -17,41 +17,41 @@ Visit the Live Website Here: [**WARMTH & CARE - Winter Clothing Donation Platfor
 
 ## ✨ Key Features  
 
-### 🌟 General Features  
+### 🌟 General Features:  
 - **Winter-Themed Responsive Design**: A cozy and intuitive interface designed for desktop, tablet, and mobile.  
 - **Dynamic Navbar**:  
   - Displays user profile photo when logged in.  
   - Includes links to **Home**, **Donation Campaigns**, **How to Help**, and **Dashboard**.  
 - **Engaging Footer**: Custom design with contact details, social media links, and copyright information.
 
-### 🏠 Home Page  
+### 🏠 Home Page:  
 - **Winter-Themed Image Slider**: Displays campaigns and community stories using **Swiper JS**.  
 - **About Section**: Highlights the mission of the platform and encourages contributions.  
 - **How It Works Section**: Explains the donation process step by step.  
 - **Custom Sections**: Includes additional sections to enhance user engagement.  
 
-### 🎁 Donation Campaigns  
+### 🎁 Donation Campaigns:  
 - **JSON Data-Driven Campaigns**: Displays campaigns dynamically with images, titles, descriptions, and divisions.  
 - **Donate Now Button**: Navigates users to a detailed campaign page (private route).  
 
-### 📜 Donation Details  
+### 📜 Donation Details:  
 - Accessible only to authenticated users.  
 - Includes a detailed view of campaigns.  
 - **Donation Form**: Users can specify item details, pickup location, and notes.  
 - **Toast Message**: Confirms successful donation submission with a thank-you note.  
 
-### 🔒 Authentication  
+### 🔒 Authentication:  
 - **Email/Password Login and Registration**:  
   - Password validation: Uppercase, lowercase, and a minimum of 6 characters.  
   - Password toggle (show/hide).  
 - **Google Social Login**: Simplifies the sign-in process.  
 - **Forget Password**: Sends users to Gmail for resetting passwords.  
 
-### 📋 Dashboard  
+### 📋 Dashboard:  
 - Personalized **User Profile**: Displays user name, email, and profile picture.  
 - **Update Profile**: Allows name and photo updates directly from Firebase.  
 
-### 🔧 Additional Features    
+### 🔧 Additional Features:    
 - **404 Error Page**: Custom "Not Found" page with redirection to Home.  
 - **Environment Variables**: Protects Firebase keys for security. 
 
