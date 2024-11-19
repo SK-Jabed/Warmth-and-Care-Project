@@ -17,7 +17,7 @@ const CampaignCard = ({ campaign }) => {
           <div className="border-b-2 pb-3 mt-8">
             <h2 className="text-xl font-semibold">{title}</h2>
             <p className="mt-3 text-base font-semibold text-gray-500">
-              {description.slice(0, 60)}...
+              {description}
             </p>
             <p className="mt-3 text-base font-semibold text-gray-500">
               Division: {division}

@@ -91,9 +91,13 @@ const Login = () => {
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
               </Link>
               <label className="label">
-                <a href="#" className="label-text-alt link link-hover">
+                <Link
+                  to="/auth/forgot-password"
+                //   state={{ email }} // Pass email from login form (if entered).
+                  className="label-text-alt link link-hover"
+                >
                   Forgot password?
-                </a>
+                </Link>
               </label>
             </div>
             {error && (
