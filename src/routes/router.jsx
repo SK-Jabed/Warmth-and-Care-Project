@@ -10,6 +10,7 @@ import Register from "../pages/Register/Register";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import CampaignDetails from "../pages/CampaignDetails/CampaignDetails";
 import PrivateRoute from "./PrivateRoute";
+import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
 
 
 const router = createBrowserRouter([
@@ -68,6 +69,14 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
     ],
+  },
+  {
+    path: "/update-profile",
+    element: (
+      <PrivateRoute>
+        <UpdateProfile></UpdateProfile>
+      </PrivateRoute>
+    ),
   },
   {
     path: "*",
