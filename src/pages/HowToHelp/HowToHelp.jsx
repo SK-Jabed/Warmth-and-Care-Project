@@ -116,6 +116,74 @@ const HowToHelp = () => {
         </button>
       </section>
 
+      <div className="bg-gray-50 text-gray-800">
+        <div className="relative">
+          <img
+            src="https://i.ibb.co/rGpT3tZ/cloth-donation.jpg"
+            alt="Winter Help"
+            className="w-full h-80 object-cover"
+          />
+          <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+            <h1 className="text-white text-4xl font-bold">How to Help</h1>
+          </div>
+        </div>
+        <section className="py-12">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-6">
+              Ways to Help
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="shadow-md p-4 rounded">
+                <h3 className="text-xl font-bold">Donate Clothes</h3>
+                <p>
+                  Drop off your gently used winter clothes at our collection
+                  points.
+                </p>
+              </div>
+              <div className="shadow-md p-4 rounded">
+                <h3 className="text-xl font-bold">Volunteer</h3>
+                <p>
+                  Assist with sorting, packaging, or distributing donations.
+                </p>
+              </div>
+              <div className="shadow-md p-4 rounded">
+                <h3 className="text-xl font-bold">Spread the Word</h3>
+                <p>Share our campaigns to amplify the cause.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <section className="bg-gray-50">
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center">
+          <div className="p-8">
+            <h2 className="text-3xl font-bold">Donate Clothes</h2>
+            <p className="mt-2">
+              Bring warmth by donating your unused winter clothing.
+            </p>
+          </div>
+          <img
+            src="https://i.ibb.co/rGpT3tZ/cloth-donation.jpg"
+            alt="Donate Clothes"
+            className="w-full"
+          />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center bg-gray-100">
+          <img
+            src="https://i.ibb.co/rGpT3tZ/cloth-donation.jpg"
+            alt="Volunteer"
+            className="w-full"
+          />
+          <div className="p-8">
+            <h2 className="text-3xl font-bold">Volunteer</h2>
+            <p className="mt-2">
+              Be part of the change by volunteering your time.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Footer Section */}
       <footer className="py-6 bg-gray-800 text-white text-center">
         <p>&copy; 2024 Warmth & Care. All Rights Reserved.</p>
