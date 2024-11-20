@@ -3,7 +3,7 @@ import heroBg from "../../assets/Bg.jpg"
 import select from "../../assets/select.png"
 import prepare from "../../assets/clothing.png"
 import submit from "../../assets/clothes.png"
-import family from "../../assets/family.jpg"
+import donate from "../../assets/Donate.png"
 
 const HowToHelp = () => {
    const [activeTab, setActiveTab] = useState("donate");
@@ -172,7 +172,7 @@ const HowToHelp = () => {
       <section className="py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 items-center mb-8">
           <img
-            src="https://i.ibb.co/rGpT3tZ/cloth-donation.jpg"
+            src={donate}
             alt="Donate Clothes"
             className="w-full h-[420px] rounded-lg shadow"
           />
@@ -228,7 +228,7 @@ const HowToHelp = () => {
               "Sylhet",
               "Khulna",
               "Rajshahi",
-              "Barisal",
+              "Rangpur",
             ].map((division, index) => (
               <div
                 key={index}
@@ -312,10 +312,12 @@ const HowToHelp = () => {
       <section className="py-12 bg-blue-500 text-white text-center">
         <h2 className="text-3xl font-bold mb-4">Ready to Make a Difference?</h2>
         <p className="max-w-2xl mx-auto mb-6">
-          Join us in spreading warmth and care this winter. Make this winter better for someone in need. Together, we can bring comfort to those in need.
+          Join us in spreading warmth and care this winter. Make this winter
+          better for someone in need. Together, we can bring comfort to those in
+          need.
         </p>
         <button className="bg-white text-blue-500 px-6 py-3 font-semibold rounded-lg shadow hover:bg-gray-100">
-          Donate Now 
+          Donate Now
         </button>
       </section>
     </div>
