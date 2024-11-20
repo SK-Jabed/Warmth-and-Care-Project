@@ -9,7 +9,7 @@ const Dashboard = () => {
     <div className="dashboard">
       <h1>Welcome, {user.displayName || "User"}!</h1>
       <div className="profile-info">
-        <img src={user.photoURL || "default-profile.jpg"} alt="Profile" />
+        <img src={user?.photoURL || "default-profile.jpg"} alt="Profile" />
         <p>
           <strong>Email:</strong> {user.email}
         </p>

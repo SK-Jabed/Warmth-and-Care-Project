@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { authContext } from '../../provider/AuthProvider';
 import { RiGoogleFill } from "react-icons/ri";
 import { RxGithubLogo } from "react-icons/rx";
@@ -15,6 +15,8 @@ const Register = () => {
       setUser,
       updateUserProfile
     } = useContext(authContext);
+
+    const navigate = useNavigate();
 
     const [error, setError] = useState("");
     const [showPassword, setShowPassword] = useState(false);
