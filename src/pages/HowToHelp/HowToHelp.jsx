@@ -109,7 +109,7 @@ const HowToHelp = () => {
                 text: "1000+ Items Donated",
               },
               {
-                img: { family },
+                img: "https://i.ibb.co.com/5sn35Gz/Communities-Strengthened.png",
                 text: "Communities Strengthened",
               },
             ].map((impact, idx) => (
