@@ -107,7 +107,6 @@ const Login = () => {
               Register
             </Link>
           </p>
-
           <div>
             <h2 className="text-lg font-semibold text-[#403F3F] mb-3">
               Login With
