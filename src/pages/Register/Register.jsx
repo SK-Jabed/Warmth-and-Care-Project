@@ -121,11 +121,6 @@ const Register = () => {
                 required
               />
             </div>
-            {/* {error.name && (
-              <label className="label text-base font-semibold text-rose-600">
-                {error.name}
-              </label>
-            )} */}
             <div className="form-control">
               <label className="label">
                 <span className="label-text">Email</span>
@@ -211,7 +206,6 @@ const Register = () => {
               Login
             </Link>
           </p>
-
           <div>
             <h2 className="text-lg font-semibold text-[#403F3F] mb-3">
               Login With
