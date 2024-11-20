@@ -224,13 +224,6 @@ const Register = () => {
                 <RiGoogleFill />
                 Login with Google
               </button>
-              {/* <button
-                onClick={handleGitHubSignIn}
-                className="btn text-[#403F3F] text-lg font-medium bg-white border-2 border-[#403F3F] hover:text-white hover:bg-[#403F3F] hover:border-none hover:shadow-lg"
-              >
-                <RxGithubLogo />
-                Login with GitHub
-              </button> */}
             </div>
           </div>
         </div>
