@@ -282,28 +282,42 @@ const HowToHelp = () => {
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-3xl font-bold">Frequently Asked Questions</h2>
           <div className="mt-10 text-left">
-            {[
-              {
-                question: "What kind of clothes can I donate?",
-                answer:
-                  "We accept gently used winter wear like jackets, sweaters, scarves, and gloves.",
-              },
-              {
-                question: "How do I arrange for a pickup?",
-                answer:
-                  "Fill out the donation form and select 'Pickup' as your preferred option.",
-              },
-              {
-                question: "Can I volunteer for this campaign?",
-                answer:
-                  "Yes, visit our volunteer section and sign up to help distribute donations.",
-              },
-            ].map((faq, idx) => (
-              <div key={idx} className="mb-8">
-                <h3 className="text-xl font-semibold">{faq.question}</h3>
-                <p className="mt-2 text-gray-600">{faq.answer}</p>
+            <div className="collapse collapse-arrow bg-base-200">
+              <input type="radio" name="my-accordion-2" defaultChecked />
+              <div className="collapse-title text-xl font-medium">
+                What kind of clothes can I donate?
               </div>
-            ))}
+              <div className="collapse-content">
+                <p>
+                  We accept gently used winter wear like jackets, sweaters,
+                  scarves, and gloves.
+                </p>
+              </div>
+            </div>
+            <div className="collapse collapse-arrow bg-base-200">
+              <input type="radio" name="my-accordion-2" />
+              <div className="collapse-title text-xl font-medium">
+                How do I arrange for a pickup?
+              </div>
+              <div className="collapse-content">
+                <p>
+                  Fill out the donation form and select 'Pickup' as your
+                  preferred option.
+                </p>
+              </div>
+            </div>
+            <div className="collapse collapse-arrow bg-base-200">
+              <input type="radio" name="my-accordion-2" />
+              <div className="collapse-title text-xl font-medium">
+                Can I volunteer for this campaign?
+              </div>
+              <div className="collapse-content">
+                <p>
+                  Yes, visit our volunteer section and sign up to help
+                  distribute donations.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
