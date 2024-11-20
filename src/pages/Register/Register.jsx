@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { authContext } from '../../provider/AuthProvider';
 import { RiGoogleFill } from "react-icons/ri";
-import { RxGithubLogo } from "react-icons/rx";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
 
@@ -10,7 +9,6 @@ const Register = () => {
     const {
       createNewUser,
       signInWithGoogle,
-      signInWithGitHub,
       user,
       setUser,
       updateUserProfile
@@ -23,15 +21,6 @@ const Register = () => {
 
     const handleGoogleSignIn = () => {
       signInWithGoogle()
-        .then((result) => {
-          setUser(result.user);
-          navigate("/");
-        })
-        .catch((error) => console.log("ERROR", error.message));
-    };
-
-    const handleGitHubSignIn = () => {
-      signInWithGitHub()
         .then((result) => {
           setUser(result.user);
           navigate("/");
@@ -230,25 +219,18 @@ const Register = () => {
             <div className="flex flex-col gap-2">
               <button
                 onClick={handleGoogleSignIn}
-                className="btn text-blue-700 text-lg font-medium bg-white border-2 border-blue-700 hover:text-white hover:bg-blue-400 hover:border-none hover:shadow-lg"
+                className="btn text-[#403F3F] text-lg font-medium bg-white border-2 border-[#403F3F] hover:text-white hover:bg-[#403F3F] hover:border-none hover:shadow-lg"
               >
                 <RiGoogleFill />
                 Login with Google
               </button>
-              <button
+              {/* <button
                 onClick={handleGitHubSignIn}
                 className="btn text-[#403F3F] text-lg font-medium bg-white border-2 border-[#403F3F] hover:text-white hover:bg-[#403F3F] hover:border-none hover:shadow-lg"
               >
                 <RxGithubLogo />
                 Login with GitHub
-              </button>
-              {/* {user && (
-                <div>
-                  <h2>User: {user.displayName}</h2>
-                  <p>Email: {user.email}</p>
-                  <img src={user.photoURL} alt="" />
-                </div>
-              )} */}
+              </button> */}
             </div>
           </div>
         </div>

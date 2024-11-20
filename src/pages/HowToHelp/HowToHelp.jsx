@@ -1,41 +1,130 @@
 import React, { useState } from "react";
+import heroBg from "../../assets/Bg.jpg"
+import select from "../../assets/select.png"
+import prepare from "../../assets/clothing.png"
+import submit from "../../assets/clothes.png"
+import family from "../../assets/family.jpg"
 
 const HowToHelp = () => {
-  const [activeTab, setActiveTab] = useState("donate");
+   const [activeTab, setActiveTab] = useState("donate");
 
-  const tabs = [
-    {
-      id: "donate",
-      title: "Donate Clothes",
-      description:
-        "Donate gently used or new winter clothes to our collection points.",
-    },
-    {
-      id: "volunteer",
-      title: "Volunteer",
-      description:
-        "Join our team to help sort, package, and distribute donations.",
-    },
-    {
-      id: "spread",
-      title: "Spread the Word",
-      description: "Share our cause with your network to raise awareness.",
-    },
-  ];
+   const tabs = [
+     {
+       id: "donate",
+       title: "Donate Clothes",
+       content:
+         "Your gently used winter clothing can provide warmth to those in need. Visit our collection points to drop off donations or schedule a pickup.",
+     },
+     {
+       id: "volunteer",
+       title: "Volunteer",
+       content:
+         "Join our team to help collect, sort, and distribute donations across communities.",
+     },
+     {
+       id: "spread",
+       title: "Spread the Word",
+       content:
+         "Raise awareness by sharing our campaigns with your friends and family. Together, we can make a bigger impact.",
+     },
+   ];
+
 
   return (
     <div className="bg-gray-50 text-gray-800">
       {/* Hero Section */}
       <div className="relative">
         <img
-          src="https://i.ibb.co/rGpT3tZ/cloth-donation.jpg"
+          src={heroBg}
           alt="How to Help"
-          className="w-full h-80 object-cover"
+          className="w-full h-[520px] object-cover bg-center bg-no-repeat"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center">
           <h1 className="text-white text-4xl font-bold">How to Help</h1>
+          <p className="mt-4 text-xl text-gray-200 text-center w-8/12">
+            Spread warmth, love, and care this winter season. Help spread warmth
+            and care this winter by joining our mission to make a difference.
+            Together, we can make this winter warm for everyone in need.
+          </p>
+          <button className="bg-white text-blue-500 px-6 py-3 mt-6 font-semibold rounded-lg shadow hover:bg-gray-100">
+            Get Started
+          </button>
         </div>
       </div>
+
+      {/* Steps Section */}
+      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <h2 className="text-2xl font-semibold text-center mb-10">
+          Simple Steps to Contribute
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Step 1 */}
+          <div className="bg-white shadow-md rounded-lg p-6 text-center">
+            <img src={select} alt="Donate" className="w-16 mx-auto mb-4" />
+            <h3 className="text-xl font-bold">Step 1: Select a Campaign</h3>
+            <p className="mt-2">
+              Browse our active donation campaigns and choose the one you want
+              to support.
+            </p>
+          </div>
+
+          {/* Step 2 */}
+          <div className="bg-white shadow-md rounded-lg p-6 text-center">
+            <img src={prepare} alt="Collect" className="w-16 mx-auto mb-4" />
+            <h3 className="text-xl font-bold">Step 2: Prepare Your Donation</h3>
+            <p className="mt-2">
+              Gather warm clothes like jackets, sweaters, or blankets in good
+              condition.
+            </p>
+          </div>
+
+          {/* Step 3 */}
+          <div className="bg-white shadow-md rounded-lg p-6 text-center">
+            <img src={submit} alt="Deliver" className="w-16 mx-auto mb-4" />
+            <h3 className="text-xl font-bold">Step 3: Submit Your Donation</h3>
+            <p className="mt-2">
+              Drop off the items at our designated locations or schedule a
+              pickup through our platform.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Featured Impact Section */}
+      <section className="bg-blue-100 py-16">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-3xl font-bold">Your Impact</h2>
+          <p className="mt-4 text-lg text-gray-700">
+            See the smiles your contributions bring.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+            {[
+              {
+                img: "https://i.ibb.co.com/99X7NWy/happy-family.png",
+                text: "500+ Families Helped",
+              },
+              {
+                img: "https://i.ibb.co.com/6XDkzr9/donation.png",
+                text: "1000+ Items Donated",
+              },
+              {
+                img: { family },
+                text: "Communities Strengthened",
+              },
+            ].map((impact, idx) => (
+              <div key={idx} className="text-center">
+                <img
+                  src={impact.img}
+                  alt="Impact"
+                  className="w-44 h-44 mx-auto mb-4"
+                />
+                <p className="text-lg font-semibold">{impact.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Intro Section */}
       <section className="py-12 text-center">
@@ -47,28 +136,35 @@ const HowToHelp = () => {
         </p>
       </section>
 
-      {/* Tab Section */}
-      <section className="py-12 bg-white">
-        <h2 className="text-center text-2xl font-bold mb-6">
-          Explore Ways to Help
-        </h2>
-        <div className="flex justify-center space-x-4 mb-6">
-          {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              className={`py-2 px-4 text-lg font-semibold rounded ${
-                activeTab === tab.id ? "bg-blue-500 text-white" : "bg-gray-200"
-              }`}
-              onClick={() => setActiveTab(tab.id)}
-            >
-              {tab.title}
-            </button>
-          ))}
-        </div>
-        <div className="text-center p-6 border rounded shadow">
-          <p className="text-lg">
-            {tabs.find((tab) => tab.id === activeTab).description}
-          </p>
+      {/* Tabs Section */}
+      <section className="py-16 bg-gray-100">
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl font-bold text-center">
+            Explore Ways to Help
+          </h2>
+          <div className="flex justify-center space-x-6 mt-6">
+            {tabs.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`px-6 py-3 rounded-t-lg font-bold ${
+                  activeTab === tab.id
+                    ? "bg-blue-700 text-white"
+                    : "bg-gray-200"
+                }`}
+              >
+                {tab.title}
+              </button>
+            ))}
+          </div>
+          <div className="bg-white p-8 shadow-md mt-4">
+            <h3 className="text-xl font-semibold">
+              {tabs.find((tab) => tab.id === activeTab).title}
+            </h3>
+            <p className="mt-4 text-gray-600">
+              {tabs.find((tab) => tab.id === activeTab).content}
+            </p>
+          </div>
         </div>
       </section>
 
@@ -78,7 +174,7 @@ const HowToHelp = () => {
           <img
             src="https://i.ibb.co/rGpT3tZ/cloth-donation.jpg"
             alt="Donate Clothes"
-            className="w-full rounded-lg shadow"
+            className="w-full h-[420px] rounded-lg shadow"
           />
           <div className="p-8">
             <h2 className="text-2xl font-bold mb-4">Donate Clothes</h2>
@@ -102,92 +198,126 @@ const HowToHelp = () => {
             className="w-full rounded-lg shadow"
           />
         </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 items-center mb-8">
+          <img
+            src="https://i.ibb.co/rGpT3tZ/cloth-donation.jpg"
+            alt="Donate Clothes"
+            className="w-full rounded-lg shadow"
+          />
+          <div className="p-8">
+            <h2 className="text-2xl font-bold mb-4">Donate Clothes</h2>
+            <p>
+              Your gently used winter clothing can bring warmth to someone in
+              need. Visit our collection points to drop off your donations.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Supported Divisions Section */}
+      <div className="bg-blue-50 py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-semibold text-center mb-8">
+            Supported Divisions
+          </h2>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              "Dhaka",
+              "Chittagong",
+              "Sylhet",
+              "Khulna",
+              "Rajshahi",
+              "Barisal",
+            ].map((division, index) => (
+              <div
+                key={index}
+                className="bg-white shadow-md rounded-lg p-6 text-center"
+              >
+                <h3 className="text-lg font-bold">{division}</h3>
+                <p className="mt-2 text-sm text-gray-600">
+                  Join the mission to help vulnerable communities in {division}.
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* FAQ Section */}
+      <div className="bg-gray-100 py-16">
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="text-3xl font-semibold text-center mb-8">
+            Frequently Asked Questions
+          </h2>
+          <div className="space-y-6">
+            {[
+              {
+                question: "What items can I donate?",
+                answer:
+                  "We accept jackets, sweaters, blankets, and other winter clothes in good condition.",
+              },
+              {
+                question: "Where are the drop-off points?",
+                answer:
+                  "Check our platform for a list of collection centers near you.",
+              },
+              {
+                question: "How do I schedule a pickup?",
+                answer:
+                  "Login to your account, select a campaign, and fill in the pickup form.",
+              },
+            ].map((faq, index) => (
+              <div key={index} className="p-4 bg-white shadow-lg rounded-lg">
+                <h3 className="font-bold text-lg">{faq.question}</h3>
+                <p className="mt-2">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* FAQs */}
+      <section className="py-16">
+        <div className="max-w-5xl mx-auto text-center">
+          <h2 className="text-3xl font-bold">Frequently Asked Questions</h2>
+          <div className="mt-10 text-left">
+            {[
+              {
+                question: "What kind of clothes can I donate?",
+                answer:
+                  "We accept gently used winter wear like jackets, sweaters, scarves, and gloves.",
+              },
+              {
+                question: "How do I arrange for a pickup?",
+                answer:
+                  "Fill out the donation form and select 'Pickup' as your preferred option.",
+              },
+              {
+                question: "Can I volunteer for this campaign?",
+                answer:
+                  "Yes, visit our volunteer section and sign up to help distribute donations.",
+              },
+            ].map((faq, idx) => (
+              <div key={idx} className="mb-8">
+                <h3 className="text-xl font-semibold">{faq.question}</h3>
+                <p className="mt-2 text-gray-600">{faq.answer}</p>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Call-to-Action Section */}
       <section className="py-12 bg-blue-500 text-white text-center">
         <h2 className="text-3xl font-bold mb-4">Ready to Make a Difference?</h2>
         <p className="max-w-2xl mx-auto mb-6">
-          Join us in spreading warmth and care this winter. Together, we can
-          bring comfort to those in need.
+          Join us in spreading warmth and care this winter. Make this winter better for someone in need. Together, we can bring comfort to those in need.
         </p>
         <button className="bg-white text-blue-500 px-6 py-3 font-semibold rounded-lg shadow hover:bg-gray-100">
-          Get Started
+          Donate Now 
         </button>
       </section>
-
-      <div className="bg-gray-50 text-gray-800">
-        <div className="relative">
-          <img
-            src="https://i.ibb.co/rGpT3tZ/cloth-donation.jpg"
-            alt="Winter Help"
-            className="w-full h-80 object-cover"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
-            <h1 className="text-white text-4xl font-bold">How to Help</h1>
-          </div>
-        </div>
-        <section className="py-12">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-6">
-              Ways to Help
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="shadow-md p-4 rounded">
-                <h3 className="text-xl font-bold">Donate Clothes</h3>
-                <p>
-                  Drop off your gently used winter clothes at our collection
-                  points.
-                </p>
-              </div>
-              <div className="shadow-md p-4 rounded">
-                <h3 className="text-xl font-bold">Volunteer</h3>
-                <p>
-                  Assist with sorting, packaging, or distributing donations.
-                </p>
-              </div>
-              <div className="shadow-md p-4 rounded">
-                <h3 className="text-xl font-bold">Spread the Word</h3>
-                <p>Share our campaigns to amplify the cause.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      <section className="bg-gray-50">
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center">
-          <div className="p-8">
-            <h2 className="text-3xl font-bold">Donate Clothes</h2>
-            <p className="mt-2">
-              Bring warmth by donating your unused winter clothing.
-            </p>
-          </div>
-          <img
-            src="https://i.ibb.co/rGpT3tZ/cloth-donation.jpg"
-            alt="Donate Clothes"
-            className="w-full"
-          />
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 items-center bg-gray-100">
-          <img
-            src="https://i.ibb.co/rGpT3tZ/cloth-donation.jpg"
-            alt="Volunteer"
-            className="w-full"
-          />
-          <div className="p-8">
-            <h2 className="text-3xl font-bold">Volunteer</h2>
-            <p className="mt-2">
-              Be part of the change by volunteering your time.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer Section */}
-      <footer className="py-6 bg-gray-800 text-white text-center">
-        <p>&copy; 2024 Warmth & Care. All Rights Reserved.</p>
-      </footer>
     </div>
   );
 };
