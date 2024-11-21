@@ -203,10 +203,8 @@ const Register = () => {
               Login
             </Link>
           </p>
+          <div className="divider">OR</div>
           <div>
-            <h2 className="text-lg font-semibold text-[#403F3F] mb-3">
-              Login With
-            </h2>
             <div className="flex flex-col gap-2">
               <button
                 onClick={handleGoogleSignIn}

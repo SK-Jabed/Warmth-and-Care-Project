@@ -15,20 +15,14 @@ const CampaignCard = ({ campaign }) => {
             />
           </figure>
           <div className="border-b-2 pb-3 mt-8">
-            <h2 className="text-xl font-semibold">{title}</h2>
+            <h2 className="text-xl font-bold text-black">{title}</h2>
             <p className="mt-3 text-base font-semibold text-gray-500">
               {description}
             </p>
-            <p className="mt-3 text-base font-semibold text-gray-500">
+            <p className="mt-3 text-base font-semibold text-gray-600">
               Division: {division}
             </p>
           </div>
-          {/* <Link to={`/gadget/${product_id}`} className="mt-4">
-            <button className="px-6 py-3 border-2 border-[#9538E2] text-[#9538E2] text-lg font-semibold bg-white rounded-full hover:bg-[#9538E2] hover:text-white">
-              View Details
-            </button>
-          </Link> */}
-
           <Link>
             <NavLink
               to={`/details/${id}`}

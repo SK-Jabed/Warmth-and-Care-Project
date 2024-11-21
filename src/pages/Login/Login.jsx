@@ -69,18 +69,18 @@ const Login = () => {
               <span className="label-text">Password</span>
             </label>
             <input
-                type={showPassword ? "text" : "password"}
-                name="password"
-                placeholder="Enter your password"
-                className="input input-bordered"
-                required
-              />
-              <Link
-                onClick={() => setShowPassword(!showPassword)}
-                className="btn btn-xs absolute right-3 top-12 rounded-full"
-              >
-                {showPassword ? <FaEyeSlash /> : <FaEye />}
-              </Link>
+              type={showPassword ? "text" : "password"}
+              name="password"
+              placeholder="Enter your password"
+              className="input input-bordered"
+              required
+            />
+            <Link
+              onClick={() => setShowPassword(!showPassword)}
+              className="btn btn-xs absolute right-3 top-12 rounded-full"
+            >
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </Link>
             <label className="label">
               <Link
                 to="/auth/forgot-password"
@@ -107,21 +107,18 @@ const Login = () => {
             Register
           </Link>
         </p>
-
+        <div className="divider">OR</div>
         <div>
-            <h2 className="text-lg font-semibold text-[#403F3F] mb-3">
-              Login With
-            </h2>
-            <div className="flex flex-col gap-2">
-              <button
-                onClick={handleGoogleSignIn}
-                className="btn text-[#403F3F] text-lg font-medium bg-white border-2 border-[#403F3F] hover:text-white hover:bg-[#403F3F] hover:border-none hover:shadow-lg"
-              >
-                <RiGoogleFill />
-                Login with Google
-              </button>
-            </div>
+          <div className="flex flex-col gap-2">
+            <button
+              onClick={handleGoogleSignIn}
+              className="btn text-[#403F3F] text-lg font-medium bg-white border-2 border-[#403F3F] hover:text-white hover:bg-[#403F3F] hover:border-none hover:shadow-lg"
+            >
+              <RiGoogleFill />
+              Login with Google
+            </button>
           </div>
+        </div>
       </div>
     </div>
   );

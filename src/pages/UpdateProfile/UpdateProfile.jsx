@@ -2,6 +2,9 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { updateProfile } from "firebase/auth";
 import { authContext } from "../../provider/AuthProvider";
+import Navbar from "../../components/Navbar/Navbar";
+import { toast } from "react-toastify";
+import Footer from "../../components/Footer/Footer";
 
 const UpdateProfile = () => {
   const { user } = useContext(authContext);
@@ -15,7 +18,7 @@ const UpdateProfile = () => {
     try {
       // Update user profile in Firebase
       await updateProfile(user, { displayName: name, photoURL });
-      alert("Profile updated successfully!");
+      toast.success("Profile updated successfully!");
       navigate("/dashboard"); // Redirect to Dashboard
     } catch (error) {
       console.error("Error updating profile:", error);
@@ -24,29 +27,11 @@ const UpdateProfile = () => {
   };
 
   return (
-    <div className="update-profile">
-      <h2>Update Profile</h2>
-      {/* <form onSubmit={handleSubmit}>
-        <label>
-          Photo URL:
-          <input
-            type="text"
-            value={photoURL}
-            onChange={(e) => setPhotoURL(e.target.value)}
-          />
-        </label>
-        <label>
-          Name:
-          <input
-            type="text"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-        </label>
-        <button type="submit" className="btn">Update Information</button>
-      </form> */}
+      <div className="update-profile">
+        <Navbar></Navbar>
+      <h2 className="text-center text-xl font-bold mt-8 underline">Update Profile</h2>
 
-      <form onSubmit={handleSubmit} className="card-body">
+      <form onSubmit={handleSubmit} className="card-body mb-20">
         <div className="form-control">
           <label className="label">
             <span className="label-text">Name</span>
@@ -86,6 +71,7 @@ const UpdateProfile = () => {
           </button>
         </div>
       </form>
+      <Footer></Footer>
     </div>
   );
 };

@@ -36,7 +36,7 @@ const DonationForm = () => {
   };
 
   return (
-    <div className="max-w-xl mx-auto p-6 bg-white shadow-lg rounded-lg">
+    <div className="max-w-xl mx-auto p-6 bg-white shadow-lg rounded-lg my-20">
       <h2 className="text-2xl font-semibold text-center text-gray-800 mb-6">
         Donate Winter Clothes
       </h2>
@@ -127,7 +127,7 @@ const DonationForm = () => {
         {/* Submit Button */}
         <button
           type="submit"
-          className="w-full py-2 px-4 bg-indigo-600 text-white font-semibold rounded-md shadow-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+          className="w-full py-2 px-4 rounded-lg bg-gradient-to-r from-blue-500 to-cyan-400 text-white font-semibold shadow-md hover:from-cyan-400 hover:to-blue-500 hover:scale-105 transition duration-300 ease-in-out"
         >
           Submit Donation
         </button>
