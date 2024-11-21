@@ -2,7 +2,10 @@ import React from "react";
 
 const VolunteerSection = () => {
   return (
-    <section className="bg-blue-50 py-12 px-6 w-11/12 mx-auto rounded-2xl mt-20">
+    <section
+      className="bg-blue-50 py-12 px-6 w-11/12 mx-auto rounded-2xl mt-20"
+      data-aos="fade-right"
+    >
       <div className="max-w-6xl mx-auto text-center">
         <h2 className="text-3xl font-bold text-blue-900 mb-4">
           Become a Volunteer
@@ -12,7 +15,10 @@ const VolunteerSection = () => {
           be part of the movement to bring warmth to those who need it most.
           Here's how you can get involved:
         </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div
+          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          data-aos="zoom-in"
+        >
           <div className="bg-white p-6 shadow-lg rounded-lg">
             <h3 className="text-2xl font-semibold text-blue-800 mb-3">
               Why Volunteer?

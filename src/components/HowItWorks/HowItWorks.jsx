@@ -2,8 +2,11 @@ import React from "react";
 
 const HowItWorks = () => {
   return (
-    <section className="bg-gray-50 py-6 px-6 mt-14 w-11/12 mx-auto rounded-2xl">
-      <div className="max-w-4xl mx-auto">
+    <section
+      className="bg-gray-50 py-6 px-6 mt-14 w-11/12 mx-auto rounded-2xl"
+      data-aos="fade-up"
+    >
+      <div className="max-w-4xl mx-auto" data-aos="flip-up">
         <h2 className="text-3xl font-bold text-gray-900 mb-4 text-center">
           How It Works
         </h2>

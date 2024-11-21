@@ -6,6 +6,8 @@ import router from './routes/router';
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import AuthProvider from './provider/AuthProvider';
+import "aos/dist/aos.css"; // AOS styles
+import "animate.css"; // Animate.css styles
 
 
 createRoot(document.getElementById("root")).render(

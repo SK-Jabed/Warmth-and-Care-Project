@@ -57,7 +57,7 @@ const Banner = () => {
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
-            <div className="relative">
+            {/* <div className="relative">
               <img
                 src={slide.image}
                 alt={slide.title}
@@ -65,6 +65,31 @@ const Banner = () => {
               />
               <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center px-6 md:px-12">
                 <div className="max-w-lg bg-white bg-opacity-80 p-4 rounded-lg shadow-lg hidden md:block">
+                  <h2 className="text-xl md:text-3xl font-bold text-gray-800 mb-2">
+                    {slide.title}
+                  </h2>
+                  <p className="text-gray-700 text-sm md:text-lg">
+                    {slide.description}
+                  </p>
+                </div>
+              </div>
+            </div> */}
+
+            <div
+              className="relative"
+              data-aos="fade-up" // Animation type
+              data-aos-duration="1500" // Custom animation duration
+            >
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover object-center bg-center"
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center px-6 md:px-12">
+                <div
+                  className="max-w-lg bg-white bg-opacity-80 p-4 rounded-lg shadow-lg hidden md:block"
+                  data-aos="fade-right" // Another animation type
+                >
                   <h2 className="text-xl md:text-3xl font-bold text-gray-800 mb-2">
                     {slide.title}
                   </h2>
