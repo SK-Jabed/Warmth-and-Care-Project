@@ -3,7 +3,7 @@ import React from "react";
 const VolunteerSection = () => {
   return (
     <section
-      className="bg-blue-50 py-12 px-6 w-11/12 mx-auto rounded-2xl mt-20"
+      className="bg-blue-50 py-12 px-6 w-11/12 mx-auto rounded-2xl my-20"
       data-aos="fade-right"
     >
       <div className="max-w-6xl mx-auto text-center">
@@ -43,7 +43,7 @@ const VolunteerSection = () => {
           </div>
         </div>
         <div className="mt-8">
-          <button className="bg-blue-600 text-white py-2 px-8 rounded-full hover:bg-blue-700 transition duration-300">
+          <button className="px-8 py-3 rounded-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white font-bold shadow-lg hover:shadow-xl hover:bg-gradient-to-l hover:from-pink-500 hover:via-purple-500 hover:to-indigo-500 transition duration-300 ease-in-out">
             Sign Up to Volunteer
           </button>
         </div>

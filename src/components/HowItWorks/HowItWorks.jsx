@@ -32,10 +32,8 @@ const HowItWorks = () => {
             <li>Chattogram</li>
             <li>Rajshahi</li>
             <li>Khulna</li>
-            <li>Barishal</li>
             <li>Sylhet</li>
             <li>Rangpur</li>
-            <li>Mymensingh</li>
           </ul>
         </div>
       </div>
