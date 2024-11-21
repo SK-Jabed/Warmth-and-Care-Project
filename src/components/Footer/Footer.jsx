@@ -1,39 +1,52 @@
 import React from 'react';
 import FooterLogo from "../../assets/Warmth & Care.png";
+import { useLocation } from 'react-router-dom';
 
 const Footer = () => {
+    const { pathname } = useLocation();
+    const isHomePage = pathname === "/";
+
     return (
       <div className="absolute w-full">
-        <div className="bg-[#ffffff15] bg-opacity-15 border-2 border-white rounded-2xl lg:w-11/12 w-full mx-auto lg:p-6 p-3 border-solid relative top-48 z-10">
-          <div
-            className="bg-cover bg-no-repeat bg-center object-cover border-2 border-[#13131310] bg-white rounded-3xl md:h-[21rem] relative"
-            style={{
-              backgroundImage:
-                "url(https://i.ibb.co.com/fvVDKf7/bg-shadow.png)",
-            }}
-          >
-            <div className="flex flex-col items-center text-center justify-center">
-              <h2 className="text-xl md:text-2xl lg:text-3xl font-extrabold mt-16">
-                Subscribe to our Newsletter
-              </h2>
-              <p className="text-lg md:text-xl lg:text-2xl font-semibold text-gray-400 mt-4">
-                Get the latest updates and news right in your inbox!
-              </p>
-              <div className="mt-8 flex flex-col md:flex-row items-center gap-4">
-                <input
-                  type="text"
-                  placeholder="Type here"
-                  className="input input-bordered input-error bg-white border-2 w-[10rem] md:w-[18rem] lg:w-[30rem]"
-                />
-                <button className="bg-gradient-to-l from-[#fff568] to-[#ff4281] rounded-xl py-3 px-5">
-                  <a className="text-lg font-bold">Subscribe</a>
-                </button>
+        {isHomePage && (
+          <div className="bg-[#ffffff15] bg-opacity-15 border-2 border-white rounded-2xl lg:w-11/12 w-full mx-auto lg:p-6 p-3 border-solid relative top-48 z-10">
+            <div
+              className="bg-cover bg-no-repeat bg-center object-cover border-2 border-[#13131310] bg-white rounded-3xl md:h-[21rem] relative"
+              style={{
+                backgroundImage:
+                  "url(https://i.ibb.co.com/fvVDKf7/bg-shadow.png)",
+              }}
+            >
+              <div className="flex flex-col items-center text-center justify-center">
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-extrabold mt-16">
+                  Subscribe to our Newsletter
+                </h2>
+                <p className="text-lg md:text-xl lg:text-2xl font-semibold text-gray-400 mt-4">
+                  Get the latest updates and news right in your inbox!
+                </p>
+                <div className="mt-8 flex flex-col md:flex-row items-center gap-4">
+                  <input
+                    type="text"
+                    placeholder="Type here"
+                    className="input input-bordered input-error bg-white border-2 w-[10rem] md:w-[18rem] lg:w-[30rem]"
+                  />
+                  <button className="bg-gradient-to-l from-[#fff568] to-[#ff4281] rounded-xl py-3 px-5">
+                    <a className="text-lg font-bold">Subscribe</a>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        )}
 
-        <div className="w-full pt-60 bg-[#06091A]">
+        <div
+          //   className="w-full pt-60 bg-[#06091A]"
+          className={`w-full pt-60 bg-[#06091A] ${
+            isHomePage
+              ? "pt-60"
+              : "pt-12"
+          }`}
+        >
           <div className="flex justify-center items-center">
             <img className="w-26 h-14" src={FooterLogo} alt="Footer Logo"></img>
           </div>
