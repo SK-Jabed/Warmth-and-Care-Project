@@ -18,9 +18,11 @@ const Navbar = () => {
         <li>
           <NavLink className={({ isActive }) => isActive ? "text-lg font-semibold text-white" : "text-lg font-medium text-gray-800 hover:text-white"} to={"/howToHelp"}>How to Help</NavLink>
         </li>
-        <li>
+        {
+            user && user?.email && <li>
           <NavLink className={({ isActive }) => isActive ? "text-lg font-semibold text-white" : "text-lg font-medium text-gray-800 hover:text-white"} to={"/dashboard"}>Dashboard</NavLink>
         </li>
+        }
       </>
     );
 

@@ -1,26 +1,23 @@
-import { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { sendPasswordResetEmail } from "firebase/auth";
 import auth from "../../firebase/firebase.config";
- // Import your Firebase configuration.
+import { authContext } from "../../provider/AuthProvider";
 
 const ForgotPassword = () => {
-  const location = useLocation();
-  const navigate = useNavigate();
+  const { email } = useContext(authContext); // Access the email from the context
+  const [userEmail, setUserEmail] = useState(email || ""); // Initialize with email from context
 
-  // Pre-fill email if passed from the Login component.
-  const [email, setEmail] = useState(location.state?.email || "");
 
   const handlePasswordReset = async () => {
     try {
-      if (!email) {
+      if (!userEmail) {
         alert("Please enter a valid email address.");
         return;
       }
-      // Trigger Firebase's password reset email.
-      await sendPasswordResetEmail(auth, email);
+      await sendPasswordResetEmail(auth, userEmail);
       alert("Password reset email sent! Check your inbox.");
-      navigate("https://mail.google.com/"); // Redirect to Gmail.
+      window.location.href = "https://mail.google.com/";
     } catch (error) {
       console.error("Error sending reset email:", error.message);
       alert("Failed to send password reset email.");
@@ -40,8 +37,8 @@ const ForgotPassword = () => {
             </label>
             <input
               type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              value={userEmail}
+              onChange={(e) => setUserEmail(e.target.value)} // Update local state
               placeholder="Enter your email address"
               className="input input-bordered"
               required
