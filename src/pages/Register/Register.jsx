@@ -25,7 +25,7 @@ const Register = () => {
           setUser(result.user);
           navigate("/");
         })
-        .catch((error) => console.log("ERROR", error.message));
+        .catch((error) => setError("ERROR", error.message));
     };
 
     const handleSubmit = (e) => {
@@ -60,8 +60,6 @@ const Register = () => {
             return;
         }
 
-        console.log(name, email, photo, password);
-
         createNewUser(email, password)
           .then((result) => {
             const user = result.user;
@@ -77,7 +75,6 @@ const Register = () => {
           .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            // console.log(errorCode, errorMessage);
           });
 
         // createNewUser(email, password)

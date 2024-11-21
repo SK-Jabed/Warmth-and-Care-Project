@@ -40,8 +40,7 @@ const Footer = () => {
         )}
 
         <div
-          //   className="w-full pt-60 bg-[#06091A]"
-          className={`w-full pt-60 bg-[#06091A] ${
+          className={`w-full bg-[#06091A] ${
             isHomePage
               ? "pt-60"
               : "pt-12"
@@ -52,13 +51,14 @@ const Footer = () => {
           </div>
           <div className="container lg:w-11/12 w-full mx-auto pt-16 pb-[72px] px-5 lg:px-16 grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-48">
             <div className="left-side-content flex flex-col gap-2 items-start">
-              <div className="info mt-4 flex flex-col gap-2">
-                <h3 className="text-white text-lg font-semibold">About Us</h3>
-                <p className="text-sm text-gray-500 font-medium">
-                  We are a passionate team dedicated to providing the best
-                  services to our customers.
-                </p>
-              </div>
+              <a class="flex items-center gap-2">
+              <span class="text-2xl md:text-3xl font-extrabold text-white">WARMTH & CARE</span>
+            </a> 
+            <div class="info flex flex-col gap-2">
+              <p class="text-sm text-gray-400">Location: av. Washington 165, NY CA 54003</p>
+              <p class="text-sm text-gray-400">Phone: +31 85 964 47 25</p>
+              <p class="text-sm text-gray-400">Email: info@yourdomain.com</p>
+            </div>
               <h3 className="font-semibold mt-2 text-white">Follow Us</h3>
               <div className="flex space-x-4">
                 <a href="#" className="text-gray-300 hover:text-white">

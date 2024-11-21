@@ -9,7 +9,7 @@ const CampaignCard = ({ campaign }) => {
         <div className="card shadow-xl p-6 bg-white transition  hover:scale-105 overflow-hidden cursor-pointer">
           <figure className="rounded-2xl">
             <img
-              className="h-[182px] w-[282px]"
+              className="w-full h-[265px]"
               src={image}
               alt="Campaign Image"
             />

@@ -23,12 +23,17 @@ const Navbar = () => {
           <NavLink className={({ isActive }) => isActive ? "text-lg font-semibold text-white" : "text-lg font-medium text-gray-800 hover:text-white"} to={"/dashboard"}>Dashboard</NavLink>
         </li>
         }
+        {
+            !user && !user?.email && <li>
+          <NavLink className={({ isActive }) => isActive ? "text-lg font-semibold text-white" : "text-lg font-medium text-gray-800 hover:text-white"} to={"/auth/register"}>Register</NavLink>
+        </li>
+        }
       </>
     );
 
     return (
       <div className="h-24">
-        <div className="bg-[#9538E2] z-50 fixed w-full">
+        <div className="bg-white z-50 fixed w-full">
           <div className="container w-11/12 mx-auto py-4">
             <div className="mx-auto flex justify-between items-center">
               <div className="dropdown lg:hidden relative ml-2">
@@ -67,8 +72,21 @@ const Navbar = () => {
                 {user && user?.email ? (
                   <div className="flex items-center gap-3">
                     <p>Hi, {user.displayName}</p>
-                    <img className="w-10 rounded-full" src={user?.photoURL} alt="" />
-                    <button onClick={logoutUser} className="btn">Log out</button>
+                    <img
+                      className="w-12 rounded-full"
+                      src={user?.photoURL}
+                      alt=""
+                    />
+                    {/* <button onClick={logoutUser} className="btn">Log out</button> */}
+                    <button
+                      onClick={logoutUser}
+                      type="button"
+                      className="group flex h-14 w-36 items-center justify-center rounded-lg bg-gradient-to-r from-purple-500 via-red-500 to-yellow-500 p-[1.5px] text-white duration-300 hover:bg-gradient-to-l hover:shadow-2xl hover:shadow-purple-600/30"
+                    >
+                      <div className="flex h-full w-full px-8  items-center justify-center rounded-lg bg-gray-900 transition duration-300 ease-in-out group-hover:bg-gradient-to-br group-hover:from-gray-700 group-hover:to-gray-900 group-hover:transition group-hover:duration-300 group-hover:ease-in-out text-lg font-semibold">
+                        Log out
+                      </div>
+                    </button>
                   </div>
                 ) : (
                   <Link

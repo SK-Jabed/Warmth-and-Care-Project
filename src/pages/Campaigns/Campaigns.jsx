@@ -4,7 +4,6 @@ import CampaignCard from '../../components/CampaignCard/CampaignCard';
 
 const Campaigns = () => {
     const data = useLoaderData();
-    console.log(data);
 
     return (
       <div>

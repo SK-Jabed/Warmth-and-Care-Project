@@ -53,7 +53,6 @@ const router = createBrowserRouter([
       const res = await fetch("/campaigns.json");
       const data = await res.json();
       const singleData = data.find((campaign) => campaign.id == params.id);
-      console.log(singleData);
       return singleData;
     },
   },
