@@ -46,11 +46,6 @@ const UpdateProfile = () => {
             required
           />
         </div>
-        {/* {error.name && (
-              <label className="label text-base font-semibold text-rose-600">
-                {error.name}
-              </label>
-            )} */}
         <div className="form-control">
           <label className="label">
             <span className="label-text">Photo URL</span>
