@@ -1,5 +1,5 @@
 import React from 'react';
-import FooterLogo from "../../assets/Warmth & Care.png";
+import FooterLogo from "../../assets/logo.png";
 import { useLocation } from 'react-router-dom';
 
 const Footer = () => {
@@ -8,57 +8,25 @@ const Footer = () => {
 
     return (
       <div className="absolute w-full">
-        {isHomePage && (
-          <div className="bg-[#ffffff15] bg-opacity-15 border-2 border-white rounded-2xl lg:w-11/12 w-full mx-auto lg:p-6 p-3 border-solid relative top-48 z-10">
-            <div
-              className="bg-cover bg-no-repeat bg-center object-cover border-2 border-[#13131310] bg-white rounded-3xl md:h-[21rem] relative"
-              style={{
-                backgroundImage:
-                  "url(https://i.ibb.co.com/fvVDKf7/bg-shadow.png)",
-              }}
-            >
-              <div className="flex flex-col items-center text-center justify-center">
-                <h2 className="text-xl md:text-2xl lg:text-3xl font-extrabold mt-16">
-                  Subscribe to our Newsletter
-                </h2>
-                <p className="text-lg md:text-xl lg:text-2xl font-semibold text-gray-400 mt-4">
-                  Get the latest updates and news right in your inbox!
-                </p>
-                <div className="mt-8 flex flex-col md:flex-row items-center gap-4">
-                  <input
-                    type="text"
-                    placeholder="Type here"
-                    className="input input-bordered input-error bg-white border-2 w-[10rem] md:w-[18rem] lg:w-[30rem]"
-                  />
-                  <button className="bg-gradient-to-l from-[#fff568] to-[#ff4281] rounded-xl py-3 px-5">
-                    <a className="text-lg font-bold">Subscribe</a>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        <div
-          className={`w-full bg-[#06091A] ${
-            isHomePage
-              ? "pt-60"
-              : "pt-12"
-          }`}
-        >
+        <div className="w-full bg-[#06091A] py-12">
           <div className="flex justify-center items-center">
-            <img className="w-26 h-14" src={FooterLogo} alt="Footer Logo"></img>
+            <img className="w-24 h-20" src={FooterLogo} alt="Footer Logo"></img>
           </div>
           <div className="container lg:w-11/12 w-full mx-auto pt-16 pb-[72px] px-5 lg:px-16 grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-48">
             <div className="left-side-content flex flex-col gap-2 items-start">
               <a class="flex items-center gap-2">
-              <span class="text-2xl md:text-3xl font-extrabold text-white">WARMTH & CARE</span>
-            </a> 
-            <div class="info flex flex-col gap-2">
-              <p class="text-sm text-gray-400">Location: av. Washington 165, NY CA 54003</p>
-              <p class="text-sm text-gray-400">Phone: +31 85 964 47 25</p>
-              <p class="text-sm text-gray-400">Email: info@yourdomain.com</p>
-            </div>
+                <span class="text-2xl md:text-3xl font-extrabold text-white">
+                  WARMTH <span className="text-teal-400">&</span>{" "}
+                  <span className="text-sky-400">CARE</span>
+                </span>
+              </a>
+              <div class="info flex flex-col gap-2">
+                <p class="text-sm text-gray-400">
+                  Location: Mirpur, Dhaka, Bangladesh
+                </p>
+                <p class="text-sm text-gray-400">Phone: +8801863646515</p>
+                <p class="text-sm text-gray-400">Email: info@yourdomain.com</p>
+              </div>
               <h3 className="font-semibold mt-2 text-white">Follow Us</h3>
               <div className="flex space-x-4">
                 <a href="#" className="text-gray-300 hover:text-white">

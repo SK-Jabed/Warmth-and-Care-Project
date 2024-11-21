@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { HiMenuAlt1 } from "react-icons/hi";
-import logo from "../../assets/Warmth & Care.png";
+import logo from "../../assets/logo.png";
 import { authContext } from '../../provider/AuthProvider';
 
 const Navbar = () => {
@@ -10,22 +10,22 @@ const Navbar = () => {
     const navLinks = (
       <>
         <li>
-          <NavLink className={({ isActive }) => isActive ? "text-lg font-semibold text-white" : "text-lg font-medium text-gray-800 hover:text-white"} to={"/"}>Home</NavLink>
+          <NavLink className={({ isActive }) => isActive ? "text-lg font-bold text-cyan-400 underline" : "text-lg font-medium text-gray-800 hover:text-bg-cyan-400"} to={"/"}>Home</NavLink>
         </li>
         <li>
-          <NavLink className={({ isActive }) => isActive ? "text-lg font-semibold text-white" : "text-lg font-medium text-gray-800 hover:text-white"} to={"/campaigns"}>Donation Campaigns</NavLink>
+          <NavLink className={({ isActive }) => isActive ? "text-lg font-bold text-cyan-400 underline" : "text-lg font-medium text-gray-800 hover:text-cyan-400"} to={"/campaigns"}>Donation Campaigns</NavLink>
         </li>
         <li>
-          <NavLink className={({ isActive }) => isActive ? "text-lg font-semibold text-white" : "text-lg font-medium text-gray-800 hover:text-white"} to={"/howToHelp"}>How to Help</NavLink>
+          <NavLink className={({ isActive }) => isActive ? "text-lg font-bold text-cyan-400 underline" : "text-lg font-medium text-gray-800 hover:text-cyan-400"} to={"/howToHelp"}>How to Help</NavLink>
         </li>
         {
             user && user?.email && <li>
-          <NavLink className={({ isActive }) => isActive ? "text-lg font-semibold text-white" : "text-lg font-medium text-gray-800 hover:text-white"} to={"/dashboard"}>Dashboard</NavLink>
+          <NavLink className={({ isActive }) => isActive ? "text-lg font-bold text-cyan-400 underline" : "text-lg font-medium text-gray-800 hover:text-cyan-400"} to={"/dashboard"}>Dashboard</NavLink>
         </li>
         }
         {
             !user && !user?.email && <li>
-          <NavLink className={({ isActive }) => isActive ? "text-lg font-semibold text-white" : "text-lg font-medium text-gray-800 hover:text-white"} to={"/auth/register"}>Register</NavLink>
+          <NavLink className={({ isActive }) => isActive ? "text-lg text-bold text-cyan-400 underline" : "text-lg font-medium text-gray-800 hover:text-white"} to={"/auth/register"}>Register</NavLink>
         </li>
         }
       </>
@@ -33,7 +33,7 @@ const Navbar = () => {
 
     return (
       <div className="h-24">
-        <div className="bg-white z-50 fixed w-full">
+        <div className="bg-white z-50 fixed w-full border-b-2">
           <div className="container w-11/12 mx-auto py-4">
             <div className="mx-auto flex justify-between items-center">
               <div className="dropdown lg:hidden relative ml-2">
@@ -52,15 +52,15 @@ const Navbar = () => {
                   {navLinks}
                 </ul>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center gap-1">
                 <img
-                  className="w-16 hidden md:block"
+                  className="w-12 rounded-full hidden md:block"
                   src={logo}
                   alt="Project Logo"
                 ></img>
-                <h2 className="text-2xl font-bold text-orange-500 ml-4 md:ml-0">
-                  WARMTH <span className="text-white">&</span>{" "}
-                  <span className="text-yellow-400">CARE</span>
+                <h2 className="text-2xl font-bold text-cyan-600 ml-4 md:ml-0">
+                  WARMTH <span className="text-black">&</span>{" "}
+                  <span className="text-sky-400">CARE</span>
                 </h2>
               </div>
               <div className="">
@@ -71,7 +71,6 @@ const Navbar = () => {
               <div>
                 {user && user?.email ? (
                   <div className="flex items-center gap-3">
-                    <p>Hi, {user.displayName}</p>
                     <img
                       className="w-12 rounded-full"
                       src={user?.photoURL}
