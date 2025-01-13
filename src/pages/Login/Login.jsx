@@ -1,14 +1,9 @@
-import React, { useContext, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { authContext } from '../../provider/AuthProvider';
+import React, { useContext, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { authContext } from "../../provider/AuthProvider";
 import { RiGoogleFill } from "react-icons/ri";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa";
-
-
-
-
-
 
 const Login = () => {
   const { loginUser, signInWithGoogle, setUser, setEmail } =
