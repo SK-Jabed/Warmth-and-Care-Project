@@ -1,5 +1,7 @@
 # ❄️ **WARMTH & CARE - Winter Clothing Donation Platform** 🧥🎁  
 
+![CasePix Banner](https://github.com/SK-Jabed/Warmth-and-Care-Project/blob/a403e15ed135f7879baf7d260badc00a797fc134/src/assets/Screenshot%202025-01-05%20022651.png)
+
 ---
 
 ## 🌟 **Project Overview**  
